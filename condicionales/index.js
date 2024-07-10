@@ -52,7 +52,6 @@ if (num1 <= num2 && num1 <= num3) {
     console.log(num3, "el tercer numero es menor  ")
 }
 
-
 /* ejercicio 5  */
 
 let persona1 = {
@@ -183,14 +182,18 @@ if (edad >= 0 && edad <= 12) {
     alert("Tiene usted mas de" + edad + " ?")
 }
 
-
 /* ejercicio 10 */
 
 let jugador1 = prompt("elige jugador1: PIEDRA/PAPEL/TIJERAS")
 let jugador2 = prompt("elige jugador2: PIEDRA/PAPEL/TIJERAS")
 let resultado
 if (jugador1 !== "PIEDRA" && jugador1 !== "PAPEL" && jugador1 !== "TIJERAS" || (jugador2 !== "PIEDRA" && jugador2 !== "PAPEL" && jugador2 !== "TIJERAS")) {
-    alert("Uno de los jugadores esta haciendo trampa")
+    if (jugador1) {
+        alert(jugador1 + "El jugador numero 1 ha echo trampa")
+
+    } else {
+        alert(jugador2 + "El jugador numero 2 ha echo trampa")
+    }
 } else {
     if (jugador1 === jugador2) {
         resultado = "empate"
@@ -235,7 +238,7 @@ switch (color) {
         console.log("Excelente elección, no lo teníamos pensado")
 }
 
-
+/* ejercicio 12 */
 
 
 let valor1 = parseInt(prompt("Ingrese el primer valor numérico:"))
@@ -269,5 +272,38 @@ switch (operacion) {
         console.log("Operación no reconocida")
 }
 
+/* ejercicio 13 */
+
+let nombre = prompt("ingrese su nombre")
+let apellido = prompt("ingrese su apellido")
+let numeroDni = parseInt(prompt("ingrese su dni"))
+let fechaNacimiento = parseInt(prompt("ingrese su fecha nacimiento"))
+let lugarDeNacimiento = prompt("ingrese su lugar de nacimiento")
+
+let mensaje = "datos ingresado:\n " +
+    "Nombre: " + nombre + "\n" +
+    "Apellido: " + apellido + "\n" +
+    "DNI: " + numeroDni + "\n" +
+    "Fecha de nacimiento: " + fechaNacimiento + "\n" +
+    "Lugar de naciemiento: " + lugarDeNacimiento + "\n"
+    + "Estan correctos estos datos?"
+
+let confirmacion = confirm(mensaje)
+
+if (confirmacion) {
+    let dni = {
+        nombre: nombre,
+        apellido: apellido,
+        numeroDni: numeroDni,
+        fechaNacimiento: fechaNacimiento,
+        lugarDeNacimiento: lugarDeNacimiento
+    }
+    console.table(dni)
+    alert("Registro exitoso")
+    console.log("Registro exitoso")
+} else {
+    alert("Vuelva a intentarlo en 1 mes")
+    console.log("Vuelva a intentarlo en 1 mes")
+}
 
 
